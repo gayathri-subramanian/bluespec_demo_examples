@@ -1,23 +1,15 @@
-
-
 SIM ?= verilator
 TOPLEVEL_LANG ?= verilog
 
 PWD=$(shell pwd)
 
-export PYTHONPATH := $(PWD)/counter_verif:$(PYTHONPATH)
+export PYTHONPATH:=$(PWD)/counter_verif:$(PYTHONPATH)
 
-ifeq ($(TOPLEVEL_LANG),verilog)
-  VERILOG_SOURCES =$(PWD)/verilog/Ch02_Counter.v
-else
-  $(error "A valid value (verilog) was not provided for TOPLEVEL_LANG=$(TOPLEVEL_LANG)")
-endif
+VERILOG_SOURCES=$(PWD)/verilog/mkCounter.v
+
 EXTRA_ARGS = --trace --trace-structs
 
-TOPLEVEL := mkCounter_v1
+TOPLEVEL = mkCounter
 MODULE   := test_counter
 
 include $(shell cocotb-config --makefiles)/Makefile.sim
-
-
-

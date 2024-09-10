@@ -1,4 +1,4 @@
-package Ch02_Counter;
+package Counter;
 
 interface Counter;
 method int read(); // Read the counter’s value
@@ -11,7 +11,7 @@ endinterface: Counter
 
 (* synthesize *)
 
-module mkCounter_v1 (Counter);
+module mkCounter (Counter);
 
 Reg#(int) value1 <- mkReg(0); // holding the counter’s value
 
@@ -27,6 +27,6 @@ method Action decrement (int dd);
 value1 <= value1 - dd;
 endmethod
 
-endmodule: mkCounter_v1
+endmodule: mkCounter
 
 endpackage

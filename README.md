@@ -1,8 +1,18 @@
-# bluespec_demo_examples
+# Counter Example
 
-Example 1:
-Up/down Counter 
+## To compile and generate verilog from bsv
 
-Command to compile and run the simulation: make compile link simulate
+```
+make  generate_verilog
+```
 
-Command to generate verilog files: make verilog
+## To simulate using cocotb
+```
+pip install cocotb_coverage
+make simulate 
+```
+
+## To clean all the builds
+```
+make clean_build
+```
