@@ -1,6 +1,6 @@
 # Counter Example
 
-## To Activate env
+## To activate pyenv
 
 ```
 pyenv activate py38
