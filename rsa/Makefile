@@ -41,7 +41,7 @@ simulate:
 	@make SIM=$(SIMULATOR) -f $(INCLUDE_VERIF)
 
 clean:
-	@rm -rf $(BUILDDIR) $(VERILOGDIR) counter_verif/__pycache__ *.vcd results.xml sim_build cov*.yml
+	@rm -rf $(BUILDDIR) $(VERILOGDIR) rsa_verif/__pycache__ *.vcd results.xml sim_build cov*.yml
 	@echo "Build directories cleaned"
 
 clean_build: clean
