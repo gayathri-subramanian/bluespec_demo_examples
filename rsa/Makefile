@@ -1,5 +1,5 @@
 # ====================================================================
-# Bluespec System Verilog Simplified Project Makefile with Cocotb and Verilator
+# Bluespec System Verilog Simplified Project Makefile with cocotb and Verilator
 # ====================================================================
 
 TOPFILE      = tb.bsv
