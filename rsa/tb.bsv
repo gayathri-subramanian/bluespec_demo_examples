@@ -4,7 +4,7 @@ import rsa::*;
 
 module mkTestbench();
 
-    RSA_ExpIfc rsa <- mkRSA_Exp();
+    RSA_Ifc rsa <- mkRSA();
 
     Reg#(Bit#(3)) state <- mkReg(0);
 

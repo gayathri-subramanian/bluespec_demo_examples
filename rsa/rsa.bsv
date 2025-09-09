@@ -1,6 +1,6 @@
 package rsa;
 
-interface RSA_ExpIfc;
+interface RSA_Ifc;
     method Action start(Bit#(32) base, Bit#(32) exponent, Bit#(32) modulus);
     method Bool busy();
     method Bit#(32) result();
@@ -10,7 +10,7 @@ endinterface
 
 typedef enum {IDLE, RUNNING} State deriving (Bits, Eq);
 
-module mkRSA_Exp(RSA_ExpIfc);
+module mkRSA(RSA_Ifc);
 
     Reg#(Bit#(32)) base_reg   <- mkReg(0);
     Reg#(Bit#(32)) exp_reg    <- mkReg(0);
