@@ -1,5 +1,5 @@
 # ====================================================================
-# Bluespec System Verilog Simplified Project Makefile with cocotb and Verilator
+# Bluespec System Verilog Simplified Project Makefile with CoCoTb and Verilator
 # ====================================================================
 
 TOPFILE      = tb.bsv
@@ -8,7 +8,7 @@ BSVINCDIR    = .:%/Libraries
 BSCDEFINES   = RV64
 VERILOGDIR   = verilog/
 BUILDDIR     = intermediate/
-SIMULATOR    = verilator                # Change if needed
+SIMULATOR    = verilator                # Change if needed, used only for verification using CoCoTb
 INCLUDE_VERIF= rsa_verif/Makefile.verif
 
 .PHONY: all generate_verilog b_sim simulate clean clean_build
