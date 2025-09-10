@@ -1,17 +1,15 @@
-# ====================================================================
-# Bluespec System Verilog Simplified Project Makefile with CoCoTb and Verilator
-# ====================================================================
+# ====================================================
+# Bluespec System Verilog Simplified Project Makefile 
+# ====================================================
 
-TOPFILE      = tb.bsv
+TOPFILE      = rsa_tb.bsv
 TOPMODULE    = mkTestbench
 BSVINCDIR    = .:%/Libraries
 BSCDEFINES   = RV64
 VERILOGDIR   = verilog/
 BUILDDIR     = intermediate/
-SIMULATOR    = verilator                # Change if needed, used only for verification using CoCoTb
-INCLUDE_VERIF= rsa_verif/Makefile.verif
 
-.PHONY: all generate_verilog b_sim simulate clean clean_build
+.PHONY: all generate_verilog b_sim clean 
 
 all: generate_verilog
 
@@ -37,15 +35,8 @@ b_sim:
 		-simdir $(BUILDDIR) -bdir $(BUILDDIR) -info-dir $(BUILDDIR)
 	@$(BUILDDIR)/$(TOPMODULE)_bsim -V
 
-simulate:
-	@make SIM=$(SIMULATOR) -f $(INCLUDE_VERIF)
 
 clean:
-	@rm -rf $(BUILDDIR) $(VERILOGDIR) rsa_verif/__pycache__ *.vcd results.xml sim_build cov*.yml
+	@rm -rf $(BUILDDIR) $(VERILOGDIR) *.vcd
 	@echo "Build directories cleaned"
 
-clean_build: clean
-	@rm -rf results.xml cov*.yml
-	@echo "All build products removed"
-
--include $(INCLUDE_VERIF)

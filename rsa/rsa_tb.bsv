@@ -1,4 +1,4 @@
-package tb;
+package rsa_tb;
 
 import rsa::*;
 
