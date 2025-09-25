@@ -11,7 +11,7 @@ module mkfile_io (Empty);
 Reg#(Bit#(32)) rd_addr <- mkReg(0);
 Reg#(Bit#(32)) wr_addr <- mkReg(9999);
 Reg#(Bit#(32)) rg_limit <- mkReg(10);
-Reg#(State)    rg_state <- mkReg(READ);
+Reg#(State)    rg_state <- mkReg(WRITE);
 
 // Create Register files to use as inputs in a testbench
 RegFile#(Bit#(32), Bit#(32)) memory_rd <- mkRegFileLoad("memory.dat", 0, 9);
